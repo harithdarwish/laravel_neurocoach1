@@ -33,7 +33,7 @@
       {{-- @include('home.gallery') --}}
     
      <!-- blog -->
-     @include('home.blog')
+     {{-- @include('home.blog') --}}
      <!-- end blog -->
      <!--  contact -->
      @include('home.contact')

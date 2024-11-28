@@ -83,11 +83,14 @@ Route::post('/mail/{id}', [AdminController::class,'mail'])->middleware(['auth','
 Route::get('/contact_us', [HomeController::class,'contact_us']);
 
 // user view the appointment
-Route::get('/my_appointments', [HomeController::class, 'my_appointments']);
+Route::get('/my_appointments', [HomeController::class, 'my_appointments'])->middleware(['auth']);
 
 //user view Calender
 Route::get('/calendar', [HomeController::class,'calendar'])->name('calendar.index');
 // Route::get('/calendar', [HomeController::class,'calendar']);
+
+// Direct to About Us page
+Route::get('/about_us', [HomeController::class,'about_us']);
 
 
 Route::get('/create_report', [AdminController::class,'create_report']);

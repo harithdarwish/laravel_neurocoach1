@@ -22,21 +22,19 @@
                            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                               <a class="nav-link" href="{{ url('/') }}">Home</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="about.html">About</a>
+                           <li class="nav-item {{ Request::is('about_us') ? 'active' : '' }}">
+                              <a class="nav-link" href="{{ url('about_us') }}">About</a>
                            </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="{{url('my_appointments')}}">Appointment</a>
+                           <li class="nav-item {{ Request::is('my_appointments') ? 'active' : '' }}">
+                              <a class="nav-link" href="{{ url('my_appointments') }}">Appointment</a>
                            </li>
-                           {{-- <li class="nav-item">
-                              <a class="nav-link" href="gallery.html">Gallery</a>
-                           </li> --}}
+                        
                            <li class="nav-item {{ Request::is('calendar') ? 'active' : '' }}">
                               <a class="nav-link" href="{{ url('calendar') }}">Calendar</a>
                            </li>
 
                         <li class="nav-item {{ Request::is('contact_us') ? 'active' : '' }}">
-                           <a class="nav-link" href="{{ url('contact_us') }}">Contact Us</a>
+                           <a class="nav-link" href="{{ url('contact_us') }}">Contact</a>
                         </li>
 
                         

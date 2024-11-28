@@ -106,8 +106,8 @@ class HomeController extends Controller
 
     public function my_appointments()
     {
-        // $data = auth()->user()->appointments;
-        $data = Service::all();
+        $data = auth()->user()->appointments;
+        // $data = Service::all();
 
         return view('home.my_appointments', compact('data'));
 
@@ -139,7 +139,10 @@ class HomeController extends Controller
             ]);
     }
 
-
+    public function about_us()
+    {
+        return view('home.about_us');
+    }
 
 
 }
