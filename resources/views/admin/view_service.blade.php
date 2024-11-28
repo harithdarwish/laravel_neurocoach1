@@ -67,7 +67,7 @@
                         <td>{{$data->service_type}}</td>
                         <td><img width= "100" src="service/{{$data->image}}"></td>
 
-                        <td> <a onclick="confirmation(event)" class= "btn btn-danger" href="{{url('delete_service',$data->id)}}">Delete</a></td>
+                        <td> <a href="{{ url('delete_service', $data->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this service?');">Delete</a> </td>
                         
                         <td> <a class= "btn btn-warning" href="{{url('update_service',$data->id)}}">Update</a></td>
                     </tr>

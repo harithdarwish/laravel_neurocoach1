@@ -14,6 +14,9 @@ use App\Models\Appointment;
 
 use App\Models\Contact;
 
+use App\Models\Report;
+
+
 //Send Mail
 use Notification;
 use App\Notifications\SendEmailNotification;
@@ -219,6 +222,79 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
+    public function create_report()
+    {
+        return view('admin.create_report');
+    }
+
+    public function add_report(Request $request)
+    {
+        $data = new Report;
+
+        $data->report_writer = $request->name;
+
+        $data->report_type = $request->type;
+
+        $data->report_title = $request->title;
+
+        $data->desc = $request->desc;
+
+        $data->report_date = $request->date;
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function view_report()
+    {
+        $data = Report::all();
+
+        return view('admin.view_report',compact('data'));
+    }
+
+    public function delete_report($id)
+    {
+        $data = Report::find($id);
+
+        $data->delete();
+
+        return redirect()->back();
+    }
+
+    public function update_report($id)
+    {
+        $data = Report::find($id);
+
+        return view('admin.update_report',compact('data'));
+    }
+
+    public function edit_report(Request $request, $id)
+    {
+        $data = Report::find($id);
+
+        $data->report_writer = $request->name;
+
+        $data->report_type = $request->type;
+
+        $data->report_title = $request->title;
+
+        $data->desc = $request->desc;
+
+        $data->report_date = $request->date;
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function reminder()
+    {
+        $data = Appointment::all();
+
+        return view('admin.reminder',compact('data'));
+    }
 
 
 }

@@ -90,6 +90,24 @@ Route::get('/calendar', [HomeController::class,'calendar'])->name('calendar.inde
 // Route::get('/calendar', [HomeController::class,'calendar']);
 
 
+Route::get('/create_report', [AdminController::class,'create_report']);
+
+Route::post('/add_report', [AdminController::class,'add_report']);
+
+Route::get('/view_report', [AdminController::class,'view_report']);
+
+Route::get('/delete_report/{id}', [AdminController::class,'delete_report']);
+
+Route::get('/update_report/{id}', [AdminController::class,'update_report']);
+
+Route::post('/edit_report/{id}', [AdminController::class,'edit_report']);
+
+
+Route::get('/reminder', [AdminController::class,'reminder']);
+
+
+
+
 
 
 

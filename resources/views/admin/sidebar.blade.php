@@ -17,12 +17,20 @@
                 <ul id="servicedropdownDropdown" class="collapse list-unstyled ">
                   <li><a href="{{url('create_service')}}">Add Service</a></li>
                   <li><a href="{{url('view_service')}}">View Service</a></li>
-                  <li><a href="#">Reminder</a></li>
+                  
+                  <li><a href="{{url('reminder')}}">Reminder</a></li>
                 </ul>
               </li>
 
               <li><a href="{{url('appointments')}}"> <i class="fa fa-calendar" style="color: #DB6574;"></i>Appointments</a></li>
              
+              <li><a href="#reportdropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-folder" style="color: #DB6574;"></i>Report Management</a>
+                <ul id="reportdropdownDropdown" class="collapse list-unstyled ">
+                  <li><a href="{{url('create_report')}}">Add Report</a></li>
+                  <li><a href="{{url('view_report')}}">View Report</a></li>
+                </ul>
+              </li>
+
               <li><a href="{{url('all_messages')}}"> <i class="fa fa-envelope" style="color: #DB6574;"></i>Messages</a></li>
       </ul>
 
