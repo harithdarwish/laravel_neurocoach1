@@ -58,26 +58,22 @@
 
       <table class="table_deg">
         <tr>
-           <th class="th_deg">ID</th>
-           <th class="th_deg">Appointment Type</th>
-           <th class="th_deg">Patient Name</th>
-           <th class="th_deg">Email</th>
-           <th class="th_deg">Phone</th>
-           <th class="th_deg">Start</th>
-           <th class="th_deg">End</th>
-           <th class="th_deg">Date</th>
-           <th class="th_deg">Status</th>
-           {{-- <th class="th_deg">Calendar</th> --}}
-
-        </tr>
+            <th class="th_deg">ID</th>
+            <th class="th_deg">Appointment Type</th>
+            <th class="th_deg">Start</th>
+            <th class="th_deg">End</th>
+            <th class="th_deg">Date</th>
+            <th class="th_deg">Status</th>
+            <th class="th_deg">Request Changes</th>
+            <th class="th_deg">Payment</th>
+            <th class="th_deg">Payment Details</th>
+ 
+         </tr>
 
         @foreach($data as $data)
         <tr>
             <td>{{$data->appointment_id}}</td>
             <td>{{$data->service->service_type}}</td>
-            <td>{{$data->name}}</td>
-            <td>{{$data->email}}</td>
-            <td>{{$data->phone}}</td>
             <td>{{$data->start_time}}</td>
             <td>{{$data->end_time}}</td>
             <td>{{$data->ondate}}</td>
@@ -94,12 +90,11 @@
                 <span style="color: green;">WAITING</span>
                 @endif
             </td>
-            {{-- <td>
-            <form action="{{ route('appointments.linkToGoogleCalendar', $data->id) }}" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-primary">Link to Google Calendar</button>
-            </form>
-        </td> --}}
+        </td>
+        <td><a href="{{url('contact_us')}}" style="color: green;"><b>Message</b></a></td>
+        {{-- payment --}}
+        <td><a href="{{url('payment')}}" style="color: blue;"><b>Click Here</b></a></td>
+        <td><a href="{{url('view_paymentUser')}}" style="color: blue;"><b>Click Here</b></a></td>
         </tr>
         @endforeach
 

@@ -123,7 +123,7 @@ Route::get('/payment', [HomeController::class,'payment']);
 
 Route::post('/add_payment', [HomeController::class,'add_payment']);
 
-Route::get('/view_payment_user', [HomeController::class,'view_payment_user']);
+Route::get('/view_paymentUser', [HomeController::class,'view_paymentUser']);
 
 Route::get('/download/{file}', [HomeController::class,'download']);
 
@@ -135,7 +135,8 @@ Route::get('/download_payment/{file}', [AdminController::class,'download_payment
 
 Route::get('/show_payment/{id}', [AdminController::class,'show_payment']);
 
+// policy
+Route::get('/policy', [HomeController::class,'policy']);
 
-
-
+Route::get('/info_service', [HomeController::class,'info_service']);
 

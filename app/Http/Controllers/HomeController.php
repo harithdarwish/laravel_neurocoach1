@@ -12,6 +12,8 @@ use App\Models\Contact;
 
 use App\Models\User;
 
+use App\Models\Payment;
+
 //Calender
 use Carbon\Carbon;
 
@@ -144,5 +146,58 @@ class HomeController extends Controller
         return view('home.about_us');
     }
 
+    // payment
+    public function payment()
+    {
+        return view('home.payment');
+    }
+
+    public function add_payment(Request $request)
+    {
+        $data = new Payment();
+
+        $data->title = $request->title;
+
+        $data->description = $request->description;
+
+        $file=$request->file;
+
+        $filename=time().'.'.$file->getClientOriginalExtension();
+
+        $request->file->move('invoiceandpayment',$filename);
+
+        $data->file=$filename;
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function view_paymentUser()
+    {
+        $data=Payment::all();
+        return view('home.view_paymentUser',compact('data'));
+    }
+
+    public function download(Request $request,$file)
+    {
+        return response()->download(public_path('invoiceandpayment/'.$file));
+    }
+
+    public function show_payment($id)
+    {
+        $data=Payment::find($id);
+        return view('home.show_payment',compact('data'));
+    }
+
+    public function policy()
+    {
+        return view('home.policy');
+    }
+
+    public function info_service()
+    {
+        return view('home.info_service');
+    }
 
 }

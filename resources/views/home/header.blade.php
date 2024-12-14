@@ -33,6 +33,10 @@
                               <a class="nav-link" href="{{ url('calendar') }}">Calendar</a>
                            </li>
 
+                           <li class="nav-item {{ Request::is('policy') ? 'active' : '' }}">
+                              <a class="nav-link" href="{{ url('policy') }}">Policy</a>
+                           </li>
+
                         <li class="nav-item {{ Request::is('contact_us') ? 'active' : '' }}">
                            <a class="nav-link" href="{{ url('contact_us') }}">Contact</a>
                         </li>

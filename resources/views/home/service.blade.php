@@ -5,6 +5,7 @@
              <div class="titlepage"  style="margin-top: 20px;">
                 <h2>Our Service</h2>
                 <p>Unlock your brain's potential with our offered services!</p>
+                <p>For More Info, <a href="{{url('info_service')}}" style="color: red;">Click Here</a>.</p>
              </div>
           </div>
        </div>
