@@ -105,11 +105,35 @@ Route::get('/update_report/{id}', [AdminController::class,'update_report']);
 
 Route::post('/edit_report/{id}', [AdminController::class,'edit_report']);
 
-
 Route::get('/reminder', [AdminController::class,'reminder']);
 
+// invoice
+Route::get('/create_invoice', [AdminController::class,'create_invoice']);
 
+Route::post('/add_invoice', [AdminController::class,'add_invoice']);
 
+Route::get('/view_invoice', [AdminController::class,'view_invoice']);
+
+Route::get('/download/{file}', [AdminController::class,'download']);
+
+Route::get('/show_invoice/{id}', [AdminController::class,'show_invoice']);
+
+// payment
+Route::get('/payment', [HomeController::class,'payment']);
+
+Route::post('/add_payment', [HomeController::class,'add_payment']);
+
+Route::get('/view_payment_user', [HomeController::class,'view_payment_user']);
+
+Route::get('/download/{file}', [HomeController::class,'download']);
+
+Route::get('/show_payment/{id}', [HomeController::class,'show_payment']);
+
+Route::get('/view_payment', [AdminController::class,'view_payment']);
+
+Route::get('/download_payment/{file}', [AdminController::class,'download_payment']);
+
+Route::get('/show_payment/{id}', [AdminController::class,'show_payment']);
 
 
 

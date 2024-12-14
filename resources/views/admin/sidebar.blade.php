@@ -31,6 +31,14 @@
                 </ul>
               </li>
 
+              <li><a href="#invoicedropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-file" style="color: #DB6574;"></i>Payment and Invoice</a>
+                <ul id="invoicedropdownDropdown" class="collapse list-unstyled ">
+                  <li><a href="{{url('create_invoice')}}">Add Invoice</a></li>
+                  <li><a href="{{url('view_invoice')}}">View Invoice</a></li>
+                  <li><a href="{{url('view_payment')}}">View Payment</a></li>
+                </ul>
+              </li>
+
               <li><a href="{{url('all_messages')}}"> <i class="fa fa-envelope" style="color: #DB6574;"></i>Messages</a></li>
       </ul>
 

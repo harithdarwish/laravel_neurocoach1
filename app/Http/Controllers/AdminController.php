@@ -16,6 +16,10 @@ use App\Models\Contact;
 
 use App\Models\Report;
 
+use App\Models\Invoice;
+
+use App\Models\Payment;
+
 
 //Send Mail
 use Notification;
@@ -296,5 +300,69 @@ class AdminController extends Controller
         return view('admin.reminder',compact('data'));
     }
 
+    // invoice
+    public function create_invoice()
+    {
+        return view('admin.create_invoice');
+    }
+
+    public function add_invoice(Request $request)
+    {
+        $data = new Invoice();
+
+        $data->title = $request->title;
+
+        $data->description = $request->description;
+
+        $file=$request->file;
+
+        $filename=time().'.'.$file->getClientOriginalExtension();
+
+        $request->file->move('invoiceandpayment',$filename);
+
+        $data->file=$filename;
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
+    public function view_invoice()
+    {
+        $data=Invoice::all();
+        return view('admin.view_invoice',compact('data'));
+    }
+
+    public function download(Request $request,$file)
+    {
+        return response()->download(public_path('invoiceandpayment/'.$file));
+    }
+
+    public function show_invoice($id)
+    {
+        $data=Invoice::find($id);
+        return view('admin.show_invoice',compact('data'));
+    }
+
+    // payment
+    public function view_payment()
+        {
+            $data=Payment::all();
+            return view('admin.view_payment',compact('data'));
+        }
+
+        public function download_payment(Request $request,$file)
+        {
+            return response()->download(public_path('invoiceandpayment/'.$file));
+        }
+
+        public function show_payment($id)
+        {
+            $data=Payment::find($id);
+            return view('admin.show_payment',compact('data'));
+        }
+
+
+    
 
 }
