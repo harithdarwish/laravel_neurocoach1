@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-// 
-use Illuminate\Http\User;
+// use Illuminate\Http\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Service;
@@ -20,6 +20,9 @@ use App\Models\Invoice;
 
 use App\Models\Payment;
 
+use Illuminate\Support\Facades\DB;
+
+use Carbon\Carbon;
 
 //Send Mail
 use Notification;
@@ -39,16 +42,65 @@ class AdminController extends Controller
                     $service = Service::all();
                     // $gallary = Gallary::all();
                     return view('home.index', compact('service'));
-                   
                 } 
-                else if ($usertype == 'admin') 
-                {
-                    return view('admin.index');
-                }
-                else 
-                {
-                    return redirect()->back();
-                }
+
+               else if ($usertype == 'admin') {
+
+                // ------- Graph and Chart -----------------------
+                // Fetch total number of users and appointments
+                $user = User::where('usertype', 'user')->count();
+                $appointment = Appointment::count();
+                $report = Report::count();
+                $invoice = Invoice::count();
+
+                // Example maximum values
+                $maxPatients = 100;
+                $maxAppointments = 100;
+                $maxReports = 100;
+                $maxInvoice = 100;
+
+                // Calculate progress percentages
+                $patientProgress = ($user / $maxPatients) * 100;
+                $patientProgress = min($patientProgress, 100); // Ensure it doesn't exceed 100%
+
+                $appointmentProgress = ($appointment / $maxAppointments) * 100;
+                $appointmentProgress = min($appointmentProgress, 100); // Ensure it doesn't exceed 100%
+
+                $reportProgress = ($report / $maxReports) * 100;
+                $reportProgress = min($reportProgress, 100); // Ensure it doesn't exceed 100%
+
+                $invoiceProgress = ($invoice / $maxInvoice) * 100;
+                $invoiceProgress = min($invoiceProgress, 100); // Ensure it doesn't exceed 100%
+
+             // Line chart data: appointments per month for the current year
+             $currentYear = Carbon::now()->year;
+
+             $monthlyAppointments = DB::table('appointments')
+                 ->select(DB::raw('MONTH(created_at) as month'), DB::raw('COUNT(*) as count'))
+                 ->whereYear('created_at', $currentYear)
+                 ->groupBy(DB::raw('MONTH(created_at)'))
+                 ->pluck('count', 'month')->toArray();
+
+             // Ensure all months are represented, even with 0 appointments
+             $appointmentsData = [];
+             for ($i = 1; $i <= 12; $i++) {
+                 $appointmentsData[] = $monthlyAppointments[$i] ?? 0;
+             }
+
+              // Count appointments by status
+            $approvedCount = Appointment::where('status', 'APPROVE')->count();
+            $rejectedCount = Appointment::where('status', 'REJECTED')->count();
+            $waitingCount = Appointment::where('status', 'waiting')->count();
+
+             // Pass progress percentages and chart data to the view
+             return view('admin.index', compact('user', 'appointment', 'report', 'invoice', 'patientProgress', 'appointmentProgress', 'reportProgress', 'invoiceProgress', 'appointmentsData','approvedCount','rejectedCount','waitingCount'));
+            // ------- Graph and Chart -----------------------
+
+
+            } else {
+                return redirect()->back();
+            }
+                
             }
         }
 

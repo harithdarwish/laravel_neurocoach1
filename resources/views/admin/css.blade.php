@@ -17,8 +17,8 @@
 <!-- Custom stylesheet - for your changes-->
 <link rel="stylesheet" href="admin/css/custom.css">
  <!-- NDL LOGO-->
- <link rel="shortcut icon" href="admin/img/logondl1.png">
+ <link rel="icon" href="{{ asset('images/logondl1.png') }}" type="image/gif" />
 
 <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->       
