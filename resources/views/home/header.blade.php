@@ -7,7 +7,7 @@
                 <div class="center-desk">
                    <div class="logo">
                     {{-- logo NDL --}}
-                      <a href="{{ url('/') }}"> <img src="{{ asset('images/logondl2.png') }}" alt="Logo" style="width: 120px; height: auto;" /></a>
+                      <a href="{{ url('/') }}"> <img src="{{ asset('images/logoNDL1.png') }}" alt="Logo" style="width: 120px; height: auto;" /></a>
                    </div>
                 </div>
              </div>

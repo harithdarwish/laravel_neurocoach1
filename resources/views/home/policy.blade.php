@@ -6,79 +6,79 @@
     @include('home.css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-
-        .policy-section {
-            background: linear-gradient(to right, #fdfbfb, #ebedee);
-            padding: 60px 20px;
-            color: #333;
-        }
-
-        .policy-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .policy-content {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .policy-content h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #4e54c8;
-        }
-        .policy-content h3 {
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #121220;
-        }
-
-        .policy-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: justify;
-            margin-bottom: 15px;
-        }
-
-        .policy-content a {
-            color: #4e54c8;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .policy-content .icon {
-            font-size: 4rem;
-            color: #17a2b8;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .btn-policy {
-            display: block;
-            margin: 20px auto 0;
-            width: 200px;
-            padding: 10px 20px;
-            text-align: center;
-            color: #fff;
-            background-color: #4e54c8;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .btn-policy:hover {
-            background-color: #7378cf;
-            color: #fff;
-        }
+    <style> 
+ 
+        .policy-section { 
+            background: linear-gradient(to right, #fdfbfb, #ebedee); 
+            padding: 60px 20px; 
+            color: #333; 
+        } 
+ 
+        .policy-title { 
+            font-size: 2.5rem; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-bottom: 40px; 
+        } 
+ 
+        .policy-content { 
+            background: #ffffff; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px; 
+        } 
+ 
+        .policy-content h2 { 
+            font-size: 2rem; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            color: #4e54c8; 
+        } 
+        .policy-content h3 { 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            color: #121220; 
+        } 
+ 
+        .policy-content p { 
+            font-size: 1.1rem; 
+            line-height: 1.8; 
+            text-align: justify; 
+            margin-bottom: 15px; 
+        } 
+ 
+        .policy-content a { 
+            color: #4e54c8; 
+            text-decoration: underline; 
+            font-weight: bold; 
+        } 
+ 
+        .policy-content .icon { 
+            font-size: 4rem; 
+            color: #17a2b8; 
+            text-align: center; 
+            margin-bottom: 20px; 
+        } 
+ 
+        .btn-policy { 
+            display: block; 
+            margin: 20px auto 0; 
+            width: 200px; 
+            padding: 10px 20px; 
+            text-align: center; 
+            color: #fff; 
+            background-color: #4e54c8; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            transition: background-color 0.3s; 
+        } 
+ 
+        .btn-policy:hover { 
+            background-color: #7378cf; 
+            color: #fff; 
+        } 
     </style>
 </head>
 <body class="main-layout">

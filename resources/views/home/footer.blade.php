@@ -33,7 +33,8 @@
             </div>
          </div>
       </div>
-      <div class="copyright">
+
+      {{-- <div class="copyright">
          <div class="container">
             <div class="row">
                <div class="col-md-10 offset-md-1">
@@ -47,7 +48,8 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
+
    </div>
 </footer>
 <!-- end footer -->

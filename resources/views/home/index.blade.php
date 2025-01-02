@@ -30,7 +30,7 @@
     @include('home.service')
       <!-- end our_service -->
       <!-- gallery -->
-      {{-- @include('home.gallery') --}}
+      @include('home.gallary')
     
      <!-- blog -->
      {{-- @include('home.blog') --}}
@@ -40,6 +40,9 @@
      <!-- end contact -->
      <!--  footer -->
      @include('home.footer')
+
+     <!-- Include the Chatbot -->
+    @include('home.chatbot') <!-- This includes the chatbot -->
 
           {{-- if page refresh, the page will show the user to the same part/section of the page  --}}
            <script type="text/javascript">

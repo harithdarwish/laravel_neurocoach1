@@ -5,33 +5,34 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @include('admin.css')
+
 <style type="text/css">
 
-    .table_deg
-    {
-        border: 2px solid white;
-        width: 100%;
-        margin: auto;
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    .th_deg
-    {
-        background-color: skyblue;
-        padding: 15px;
-    }
-
-    tr
-    {
-        border: 3px solid white;
-    }
-
-    td
-    {
-        padding: 10px;
-    }
-    </style>
+  .table_deg {
+      border-collapse: collapse; /* Ensures borders are not doubled */
+      border: 2px solid black;
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      margin-top: 40px;
+  }
+  
+  .th_deg {
+      background-color: skyblue;
+      padding: 15px;
+      border: 2px solid black; /* Adds vertical borders for header cells */
+  }
+  
+  tr {
+      border: 2px solid black;
+  }
+  
+  td {
+      padding: 10px;
+      border: 2px solid black; /* Adds vertical borders for table cells */
+  }
+      </style>
+      
   </head>
   <body>
 @include('admin.header')

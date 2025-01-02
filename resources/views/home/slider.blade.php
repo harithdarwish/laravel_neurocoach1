@@ -12,17 +12,17 @@
            <li data-target="#myCarousel" data-slide-to="2"></li>
        </ol>
        <div class="carousel-inner">
-           <!-- First Slide -->
+           <!-- First Slide to Third Slide -->
            <div class="carousel-item active">
-               <img class="first-slide" src="{{ asset('images/bannerndl1.jpeg') }}" alt="First slide" style="width: 100%; height: 500px; object-fit: cover;">
+               <img class="first-slide" src="{{ asset('images/slideNDL1.jpg') }}" alt="First slide" style="width: 100%; height: 500px; object-fit: cover;">
            </div>
-           <!-- Second Slide -->
+      
            <div class="carousel-item">
-               <img class="second-slide" src="{{ asset('images/bannerndl2.jpg') }}" alt="Second slide" style="width: 100%; height: 500px; object-fit: cover;">
+               <img class="second-slide" src="{{ asset('images/slideNDL2.jpg') }}" alt="Second slide" style="width: 100%; height: 500px; object-fit: cover;">
            </div>
-           <!-- Third Slide -->
+   
            <div class="carousel-item">
-               <img class="third-slide" src="{{ asset('images/bannerndl3.jpg') }}" alt="Third slide" style="width: 100%; height: 500px; object-fit: cover;">
+               <img class="third-slide" src="{{ asset('images/slideNDL3.jpg') }}" alt="Third slide" style="width: 100%; height: 500px; object-fit: cover;">
            </div>
        </div>
        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -82,4 +82,13 @@
    .carousel-inner img {
        transition: transform 1s ease-in-out;
    }
+
+   .carousel-indicators {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to position the indicators below the static box */
+    left: 43%;
+    transform: translateX(-50%);
+    z-index: 20; /* Ensures the indicators are above the carousel images */
+}
+
 </style>

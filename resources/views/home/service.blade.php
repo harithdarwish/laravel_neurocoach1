@@ -22,7 +22,7 @@
 
                       <div class="1_service" style="text-align: center;">
                           <h3 style="font-weight: bold;" >{{$services->service_title}}</h3>
-                          <p style="padding:20px">{!! Str::limit($services->description,100) !!}</p>
+                          {{-- <p style="padding:20px">{!! Str::limit($services->description,100) !!}</p> --}}
                           
                           <a class="btn btn-primary" href="{{url('detail_service',$services->id)}}">Service Details</a>
                       </div>

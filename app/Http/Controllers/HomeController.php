@@ -14,6 +14,8 @@ use App\Models\User;
 
 use App\Models\Payment;
 
+use App\Models\Gallary;
+
 //Calender
 use Carbon\Carbon;
 

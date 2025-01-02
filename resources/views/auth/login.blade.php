@@ -1,7 +1,7 @@
 <x-guest-layout>
     <!-- Add your custom styles inside the <style> tag -->
     <style>
-        .login-page {
+        .login-form {
             background-color: #98D0C1;
             padding: 20px;
             border-radius: 10px;
@@ -23,18 +23,14 @@
         }
     </style>
 
-            <x-slot name="title">
-                {{ __('Hello') }}
-            </x-slot>
-
     <x-authentication-card>
+        
         <x-slot name="logo">
-          <!-- Custom Logo -->
-          <img src="{{ asset('images/logondl1.png') }}" alt="Custom Logo" class="w-24 h-24">
+            <img src="{{ asset('images/logologinNDL.png') }}" alt="Custom Logo" class="w-13 h-14"> 
         </x-slot>
 
         <!-- Applying the login-page class to style the form container -->
-        <div class="login-page">
+        <div class="login-form">
             <x-validation-errors class="mb-4" />
 
             @if (session('status'))

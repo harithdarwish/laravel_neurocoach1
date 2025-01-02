@@ -1,7 +1,7 @@
 <x-guest-layout>
 
     <style>
-        .register-page {
+        .register-form {
             background-color: #98D0C1;
             padding: 20px;
             border-radius: 10px;
@@ -24,11 +24,11 @@
 
     <x-authentication-card>
         <x-slot name="logo">
-          <img src="{{ asset('images/logondl1.png') }}" alt="Custom Logo" class="w-24 h-24">
+          <img src="{{ asset('images/logologinNDL.png') }}" alt="Custom Logo" class="w-12 h-14">
         </x-slot>
 
 
-        <div class="register-page">
+        <div class="register-form">
 
         <x-validation-errors class="mb-4" />
 
@@ -40,22 +40,22 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
-            <div class="mt-4">
+            <div class="mt-2">
                 <x-label for="email" value="{{ __('Email') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
-            <div>
+            <div  class="mt-2">
                 <x-label for="name" value="{{ __('Phone') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autofocus autocomplete="phone" />
             </div>
 
-            <div class="mt-4">
+            <div  class="mt-2">
                 <x-label for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
-            <div class="mt-4">
+            <div  class="mt-2">
                 <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
@@ -98,8 +98,7 @@
                     </button>
                 </div>
 
-            </div>
+            </div> 
         </form>
     </x-authentication-card>
-</div>
 </x-guest-layout>

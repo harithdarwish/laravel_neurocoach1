@@ -140,3 +140,9 @@ Route::get('/policy', [HomeController::class,'policy']);
 
 Route::get('/info_service', [HomeController::class,'info_service']);
 
+// gallary
+Route::get('/view_gallary', [AdminController::class,'view_gallary']);
+
+Route::post('/upload_gallary', [AdminController::class,'upload_gallary']);
+
+Route::get('/delete_gallary/{id}', [AdminController::class,'delete_gallary']);

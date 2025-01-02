@@ -20,6 +20,8 @@ use App\Models\Invoice;
 
 use App\Models\Payment;
 
+use App\Models\Gallary;
+
 use Illuminate\Support\Facades\DB;
 
 use Carbon\Carbon;
@@ -40,8 +42,8 @@ class AdminController extends Controller
                 if ($usertype == 'user') {
 
                     $service = Service::all();
-                    // $gallary = Gallary::all();
-                    return view('home.index', compact('service'));
+                    $gallary = Gallary::all();
+                    return view('home.index', compact('service', 'gallary'));
                 } 
 
                else if ($usertype == 'admin') {
@@ -109,9 +111,9 @@ class AdminController extends Controller
         public function home()
         {
             $service = Service::all();
-            // $gallary = Gallary::all();
-            return view('home.index',compact('service'));
-         
+            $gallary = Gallary::all();
+        return view('home.index',compact('service','gallary'));
+
         }
 
         public function create_service()
@@ -414,7 +416,42 @@ class AdminController extends Controller
             return view('admin.show_payment',compact('data'));
         }
 
-
+    //Gallary
+        public function view_gallary()
+        {
+            $gallary = Gallary::all();
     
-
+            return view('admin.gallary',compact('gallary'));
+        }
+    
+        public function upload_gallary(Request $request)
+        {
+            $data = new Gallary;
+    
+            $image=$request->image;
+    
+            if($image)
+            {
+                $imagename=time().'.'.$image->getClientOriginalExtension();
+    
+                $request->image->move('gallary',$imagename);
+    
+                $data->image=$imagename;
+            }
+    
+            $data->save();
+    
+            return redirect()->back();
+        }
+    
+        public function delete_gallary($id)
+        {
+            $data = Gallary::find($id);
+    
+            $data->delete();
+    
+            return redirect()->back();
+        }
+    
+    
 }
